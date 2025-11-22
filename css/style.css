@@ -1,0 +1,492 @@
+:root {
+    --main-color: #0287c3
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    font-family: "Poppins", sans-serif;
+}
+
+*::selection {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.btn {
+    cursor: pointer;
+    border: .2rem solid var(--main-color);
+    color: var(--main-color);
+    padding: .5rem 3rem;
+    background: none;
+    margin-top: 1rem;
+    font-size: 2rem;
+    position: relative;
+    z-index: 0;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    clip-path: circle(0% at 0% 0%);
+    transition: .3s;
+}
+
+.btn:hover::before {
+    clip-path: circle(100%);
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.heading {
+    display: inline-block;
+    color: #333;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    padding-top: 8rem;
+    font-size: 3rem;
+    border-bottom: .2rem solid var(--main-color);
+}
+
+/* header start  */
+header {
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header.active-bar {
+    background-color: #fff;
+    box-shadow: .1rem .3rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+header .logo span {
+    color: var(--main-color);
+}
+
+header .navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+}
+
+header .navbar ul li {
+    margin: 0 1rem;
+}
+
+header .navbar ul li a {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+header.active-bar .logo,
+header.active-bar .navbar ul li a {
+    color: #333;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a.active {
+    color: var(--main-color);
+}
+
+#menu {
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* header end */
+.home {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/main.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.home h1 {
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 .3rem .5rem #000;
+    padding: 0 1rem;
+}
+
+.home .btn {
+    box-shadow: 0 .3rem .5rem #000;
+    color: #fff;
+}
+
+/* service start  */
+.service {
+    min-height: 100vh;
+    text-align: center;
+}
+
+.service .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service .box-container .box {
+    height: 23rem;
+    width: 35rem;
+    margin: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.service .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service .box-container .box .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    height: 90%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.service .box-container .box:hover .info {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.service .box-container .box .info h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.service .box-container .box .info p {
+    font-size: 1.2rem;
+    color: #666;
+    padding: 1rem 2rem;
+}
+
+/* service end  */
+
+/* trainer start  */
+.trainer {
+    min-height: 100vh;
+    text-align: center;
+    background-color: #333;
+}
+
+.trainer .heading {
+    color: #fff;
+}
+
+.trainer .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.trainer .box-container .box {
+    height: 40rem;
+    width: 27rem;
+    margin: 1.5rem 1rem;
+    border: .5rem solid var(--main-color);
+    overflow: hidden;
+    box-shadow: 0 .3rem .5rem #000;
+    position: relative;
+}
+
+.trainer .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.trainer .box-container .box .share {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: #fff;
+    border-top: .5rem solid var(--main-color);
+
+}
+
+.trainer .box-container .box .share h2 {
+    color: #333;
+    font-size: 2rem;
+}
+
+
+.trainer .box-container .box .share a {
+    width: 4.5rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+    color: #fff;
+    background-color: var(--main-color);
+    margin: .5rem;
+    font-size: 2rem;
+}
+
+.trainer .box-container .box .share a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* trainer end  */
+
+/* plan start  */
+.plan {
+    min-height: 100vh;
+    text-align: center;
+    background: #eee;
+}
+
+.plan .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan .box-container .box {
+    width: 30rem;
+    background-color: #fff;
+    margin: 2rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+}
+
+.plan .box-container .box:hover {
+    transform: scale(1.04);
+}
+
+.plan .box-container .box .title {
+    padding: 1rem 0;
+    background-color: var(--main-color);
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.plan .box-container .box .price {
+    padding-top: 1rem;
+    font-size: 4rem;
+    color: #333;
+}
+
+.plan .box-container .box .price span {
+    font-size: 2rem;
+}
+
+.plan .box-container .box .month {
+    font-size: 2rem;
+    color: #666;
+}
+
+.plan .box-container .box ul {
+    margin: 2rem 8rem;
+    list-style: none;
+}
+
+.plan .box-container .box ul li {
+    text-align: left;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.plan .box-container .box ul li i {
+    color: var(--main-color);
+    padding: 0 .5rem;
+}
+
+.plan .box-container .box .btn {
+    margin-bottom: 3rem;
+}
+
+/* plan end  */
+
+/* register start  */
+.register {
+    min-height: 90vh;
+    text-align: center;
+    background-color: #333;
+    padding-bottom: 3rem;
+}
+
+.register .heading {
+    color: #fff;
+}
+
+.register form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.register form .inputbox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.register form .inputbox input,
+textarea {
+    width: 49%;
+    height: 4rem;
+    padding: 0 1rem;
+    background-color: #111;
+    margin: 1rem 0;
+    color: #fff;
+    font-size: 2rem;
+    text-transform: none;
+}
+
+.register form .inputbox input:focus,
+textarea:focus {
+    background-color: #222;
+}
+
+.register form textarea {
+    height: 20rem;
+    resize: none;
+    width: 100%;
+    padding: 1rem;
+}
+
+.register form .btn:hover {
+    background-color: var(--main-color);
+}
+
+/* register end */
+
+/* footer start  */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    color: #333;
+    background-color: #eee;
+    font-size: 1.6rem;
+}
+
+footer a {
+    color: var(--main-color);
+}
+
+/* footer end  */
+
+/* @media  */
+@media (max-width:991px) {}
+
+@media (max-width:768px) {
+    html {
+        font-size: 55%;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    header .navbar {
+        position: fixed;
+        top: -100%;
+        opacity: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-top: .1rem solid rgba(0, 0, 0, .3);
+    }
+
+    header .navbar ul {
+        flex-flow: column;
+        padding: 2rem 0;
+    }
+
+    header .navbar ul li {
+        margin: 1.5rem 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    header .navbar ul li a {
+        color: #333;
+        font-size: 2rem;
+        display: block;
+    }
+
+    header .navbar.show {
+        top: 8rem;
+        opacity: 1;
+    }
+
+    .register form {
+        width: 90%;
+    }
+}
+
+@media (max-width:500px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home h1 {
+        font-size: 5rem;
+    }
+
+    .register form .inputbox input {
+        width: 100%;
+    }
+}
